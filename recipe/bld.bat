@@ -23,5 +23,5 @@ nmake install
 if errorlevel 1 exit 1
 
 :: Move everything 1-level down.
-xcopy %LIBRARY_INC%\freetype2\freetype\*.* %LIBRARY_INC%\freetype2\ /s /e || exit 1
-rmdir %LIBRARY_INC%\freetype2\freetype /s /q
+move %LIBRARY_INC%\freetype2\freetype %LIBRARY_INC% || exit 1
+move %LIBRARY_INC%\freetype2\ft2build.h %LIBRARY_INC% || exit 1
