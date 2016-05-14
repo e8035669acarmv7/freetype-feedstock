@@ -8,6 +8,9 @@ source:
     fn: freetype-{{ version }}.tar.bz2
     url: http://download.savannah.gnu.org/releases/freetype/freetype-{{ version }}.tar.bz2
     sha256: 371e707aa522acf5b15ce93f11183c725b8ed1ee8546d7b3af549863045863a2
+    patches:
+        # Build shared libs with msvc.
+        - winshared.patch  # [win]
 
 build:
     number: 0
