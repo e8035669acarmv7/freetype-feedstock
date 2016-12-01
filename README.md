@@ -1,15 +1,27 @@
 About freetype
 ==============
 
-Home: http://freetype.sourceforge.net/index2.html
+Home: https://www.freetype.org/
 
 Package license: GPL-2.0 and FreeType (http://freetype.sourceforge.net/FTL.TXT)
 
 Feedstock license: BSD 3-Clause
 
-Summary: A TrueType Font Library
+Summary: A TrueType Font Library.
 
 
+
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/freetype-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/freetype-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/freetype-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/freetype-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/freetype-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/freetype-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/freetype/badges/version.svg)](https://anaconda.org/conda-forge/freetype)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/freetype/badges/downloads.svg)](https://anaconda.org/conda-forge/freetype)
 
 Installing freetype
 ===================
@@ -31,7 +43,6 @@ It is possible to list all of the versions of `freetype` available on your platf
 ```
 conda search freetype --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -67,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/freetype-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/freetype-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/freetype-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/freetype-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/freetype-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/freetype-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/freetype/badges/version.svg)](https://anaconda.org/conda-forge/freetype)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/freetype/badges/downloads.svg)](https://anaconda.org/conda-forge/freetype)
 
 
 Updating freetype-feedstock
