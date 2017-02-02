@@ -13,26 +13,34 @@ source:
     - winshared.patch  # [win]
 
 build:
-  number: 0
+  number: 1
+  skip: True  # [win and py>35]
   features:
     - vc9  # [win and py27]
     - vc10  # [win and py34]
-    - vc14  # [win and py35]
+    - vc14  # [win and py>=35]
 
 requirements:
   build:
     - python  # [win]
     - cmake  # [win]
     - zlib 1.2.*
-    - libpng >=1.6.23,<1.7
+    - libpng >=1.6.28,<1.7
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py>=35]
   run:
     - zlib 1.2.*
-    - libpng >=1.6.23,<1.7
+    - libpng >=1.6.28,<1.7
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py>=35]
 
 test:
   commands:
     - freetype-config --version  # [not win]
-    #- conda inspect linkages -p $PREFIX freetype  # [not win]
+    - conda inspect linkages -p $PREFIX freetype  # [not win]
+    - conda inspect objects -p $PREFIX freetype  # [osx]
 
 about:
   home: https://www.freetype.org/
