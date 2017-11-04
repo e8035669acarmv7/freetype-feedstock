@@ -5,7 +5,6 @@ package:
   version: {{ version }}
 
 source:
-  fn: freetype-{{ version }}.tar.bz2
   url: http://download.savannah.gnu.org/releases/freetype/freetype-{{ version }}.tar.bz2
   sha256: d6a451f5b754857d2aa3964fd4473f8bc5c64e879b24516d780fb26bec7f7d48
   patches:
@@ -13,34 +12,31 @@ source:
     - winshared.patch  # [win]
 
 build:
-  number: 1
-  skip: True  # [win and py>35]
+  number: 2
+  skip: True  # [win and py36]
   features:
     - vc9  # [win and py27]
-    - vc10  # [win and py34]
-    - vc14  # [win and py>=35]
+    - vc14  # [win and (py35 or py36)]
 
 requirements:
   build:
     - python  # [win]
     - cmake  # [win]
-    - zlib 1.2.*
-    - libpng >=1.6.28,<1.7
+    - zlib 1.2.11
+    - libpng >=1.6.22,<1.6.31
     - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and py>=35]
+    - vc 14  # [win and (py35 or py36)]
   run:
-    - zlib 1.2.*
-    - libpng >=1.6.28,<1.7
+    - zlib 1.2.11
+    - libpng >=1.6.22,<1.6.31
     - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and py>=35]
+    - vc 14  # [win and (py35 or py36)]
 
 test:
   commands:
     - freetype-config --version  # [not win]
-    - conda inspect linkages -p $PREFIX freetype  # [not win]
-    - conda inspect objects -p $PREFIX freetype  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://www.freetype.org/
