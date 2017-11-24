@@ -1,4 +1,4 @@
-{% set version = "2.7" %}
+{% set version = "2.8.1" %}
 
 package:
   name: freetype
@@ -6,13 +6,13 @@ package:
 
 source:
   url: http://download.savannah.gnu.org/releases/freetype/freetype-{{ version }}.tar.bz2
-  sha256: d6a451f5b754857d2aa3964fd4473f8bc5c64e879b24516d780fb26bec7f7d48
+  sha256: e5435f02e02d2b87bb8e4efdcaa14b1f78c9cf3ab1ed80f94b6382fb6acc7d78
   patches:
     # Build shared libs with msvc.
     - winshared.patch  # [win]
 
 build:
-  number: 2
+  number: 0
   skip: True  # [win and py36]
   features:
     - vc9  # [win and py27]
@@ -23,12 +23,12 @@ requirements:
     - python  # [win]
     - cmake  # [win]
     - zlib 1.2.11
-    - libpng >=1.6.22,<1.6.31
+    - libpng >=1.6.32,<1.6.35
     - vc 9  # [win and py27]
     - vc 14  # [win and (py35 or py36)]
   run:
     - zlib 1.2.11
-    - libpng >=1.6.22,<1.6.31
+    - libpng >=1.6.32,<1.6.35
     - vc 9  # [win and py27]
     - vc 14  # [win and (py35 or py36)]
 
