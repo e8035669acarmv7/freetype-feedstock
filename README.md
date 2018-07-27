@@ -3,25 +3,30 @@ About freetype
 
 Home: https://www.freetype.org/
 
-Package license: GPL-2.0 and FreeType (http://freetype.sourceforge.net/FTL.TXT)
+Package license: GPL-2.0 and FreeType
 
 Feedstock license: BSD 3-Clause
 
-Summary: A TrueType Font Library.
+Summary: A Free, High-Quality, and Portable Font Engine
 
+FreeType is designed to be small, efficient, highly customizable
+and portable while capable of producing high-quality output (glyph images)
+of most vector and bitmap font formats.
 
 
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/freetype-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/freetype-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/freetype-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/freetype-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/freetype-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/freetype-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/freetype-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/freetype-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/freetype-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/freetype-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/freetype-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/freetype-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/freetype/badges/version.svg)](https://anaconda.org/conda-forge/freetype)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/freetype/badges/downloads.svg)](https://anaconda.org/conda-forge/freetype)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-freetype-green.svg)](https://anaconda.org/conda-forge/freetype) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/freetype.svg)](https://anaconda.org/conda-forge/freetype) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/freetype.svg)](https://anaconda.org/conda-forge/freetype) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/freetype.svg)](https://anaconda.org/conda-forge/freetype) |
 
 Installing freetype
 ===================
