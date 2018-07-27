@@ -12,25 +12,19 @@ source:
     - winshared.patch  # [win]
 
 build:
-  number: 0
-  skip: True  # [win and py36]
-  features:
-    - vc9  # [win and py27]
-    - vc14  # [win and (py35 or py36)]
+  number: 1
 
 requirements:
   build:
-    - python  # [win]
     - cmake  # [win]
-    - zlib 1.2.11
-    - libpng >=1.6.32,<1.6.35
-    - vc 9  # [win and py27]
-    - vc 14  # [win and (py35 or py36)]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - zlib
+    - libpng
   run:
-    - zlib 1.2.11
-    - libpng >=1.6.32,<1.6.35
-    - vc 9  # [win and py27]
-    - vc 14  # [win and (py35 or py36)]
+    - zlib
+    - libpng
 
 test:
   commands:
