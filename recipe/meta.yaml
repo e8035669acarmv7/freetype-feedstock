@@ -1,4 +1,4 @@
-{% set version = "2.8.1" %}
+{% set version = "2.9.1" %}
 
 package:
   name: freetype
@@ -6,42 +6,47 @@ package:
 
 source:
   url: http://download.savannah.gnu.org/releases/freetype/freetype-{{ version }}.tar.bz2
-  sha256: e5435f02e02d2b87bb8e4efdcaa14b1f78c9cf3ab1ed80f94b6382fb6acc7d78
+  sha256: db8d87ea720ea9d5edc5388fc7a0497bb11ba9fe972245e0f7f4c7e8b1e1e84d
   patches:
-    # Build shared libs with msvc.
-    - winshared.patch  # [win]
+    - 0001-Unbreak-CMake-Windows-installation.patch
+    - 0002-Win-Specify-RUNTIME-destination-for-dll.patch
 
 build:
   number: 0
-  skip: True  # [win and py36]
-  features:
-    - vc9  # [win and py27]
-    - vc14  # [win and (py35 or py36)]
+  run_exports:
+    # has removed symbols at minor versions, but only very rarely.  Go with major.
+    #    https://abi-laboratory.pro/tracker/timeline/freetype/
+    - {{ pin_subpackage('freetype') }}
 
 requirements:
   build:
-    - python  # [win]
+    - {{ compiler('c') }}
     - cmake  # [win]
-    - zlib 1.2.11
-    - libpng >=1.6.32,<1.6.35
-    - vc 9  # [win and py27]
-    - vc 14  # [win and (py35 or py36)]
+    - make   # [not win]
+  host:
+    - libpng
+    - zlib
   run:
-    - zlib 1.2.11
-    - libpng >=1.6.32,<1.6.35
-    - vc 9  # [win and py27]
-    - vc 14  # [win and (py35 or py36)]
+    - libpng
+    - zlib
 
 test:
   commands:
-    - freetype-config --version  # [not win]
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
+    - ${PREFIX}/bin/freetype-config --version  # [not win]
+    - if exist %LIBRARY_BIN%\freetype.dll (exit 0) else (exit 1)  # [win]
 
 about:
   home: https://www.freetype.org/
-  license: GPL-2.0 and FreeType (http://freetype.sourceforge.net/FTL.TXT)
-  summary: 'A TrueType Font Library.'
+  license: GPL-2.0 and FreeType
+  license_url: http://freetype.sourceforge.net/FTL.TXT
+  summary: A Free, High-Quality, and Portable Font Engine
+  description: |
+    FreeType is designed to be small, efficient, highly customizable
+    and portable while capable of producing high-quality output (glyph images)
+    of most vector and bitmap font formats.
+  doc_url: http://freetype.sourceforge.net/freetype2/documentation.html
+  doc_source_url: https://sourceforge.net/projects/freetype/?source=navbar
+  dev_url: http://git.savannah.gnu.org/cgit/freetype/
 
 extra:
   recipe-maintainers:
