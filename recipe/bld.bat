@@ -1,6 +1,8 @@
 mkdir build
 cd build
 
+set "CXXFLAGS= -MD"
+
 :: Configure.
 cmake -G "NMake Makefiles" ^
       -D CMAKE_INSTALL_PREFIX:PATH=%LIBRARY_PREFIX% ^
