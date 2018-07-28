@@ -1,6 +1,7 @@
 mkdir build
 cd build
 
+set "CFLAGS= -MD"
 set "CXXFLAGS= -MD"
 
 :: Configure.
