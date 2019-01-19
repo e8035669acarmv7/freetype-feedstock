@@ -14,7 +14,7 @@ source:
     - 0004-Fix-the-CMake-versioning-information.patch
 
 build:
-  number: 1004
+  number: 1005
   run_exports:
     # has removed symbols at minor versions, but only very rarely.  Go with major.
     #    https://abi-laboratory.pro/tracker/timeline/freetype/
