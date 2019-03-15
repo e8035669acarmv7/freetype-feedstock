@@ -8,8 +8,6 @@ source:
   url: http://download.savannah.gnu.org/releases/freetype/freetype-{{ version }}.tar.bz2
   sha256: fccc62928c65192fff6c98847233b28eb7ce05f12d2fea3f6cc90e8b4e5fbe06
   patches:
-    - 0001-Unbreak-CMake-Windows-installation.patch
-    - 0002-Win-Specify-RUNTIME-destination-for-dll.patch
     - 0003-Install-the-pkg-config-file-on-Windows-too.patch
     - 0004-Fix-the-CMake-versioning-information.patch
 
@@ -24,7 +22,6 @@ requirements:
   build:
     - {{ compiler('c') }}
     - cmake     # [win]
-    - m2-patch  # [win]
     - make      # [not win]
   host:
     - libpng
