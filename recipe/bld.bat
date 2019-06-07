@@ -6,17 +6,17 @@ cd build
 
 :: Configure.
 cmake -G"%CMAKE_GENERATOR%" ^
-      -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX:/=\\%" ^
-      -DCMAKE_BUILD_TYPE=Release ^
-      -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%:/=\\" ^
-      -DCMAKE_SYSTEM_PREFIX_PATH="%LIBRARY_PREFIX:/=\\%" ^
-      -DBUILD_SHARED_LIBS:BOOL=true ^
-      -DFT_WITH_BZIP2=False ^
-      -DFT_WITH_HARFBUZZ=False ^
-      -DCMAKE_DISABLE_FIND_PACKAGE_BZip2=True ^
-      -DCMAKE_DISABLE_FIND_PACKAGE_HarfBuzz=True ^
-      -DFT_WITH_ZLIB=True ^
-      -DFT_WITH_PNG=True ^
+      -D CMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX:/=\\%" ^
+      -D CMAKE_BUILD_TYPE=Release ^
+      -D CMAKE_PREFIX_PATH="%LIBRARY_PREFIX%:/=\\" ^
+      -D CMAKE_SYSTEM_PREFIX_PATH="%LIBRARY_PREFIX:/=\\%" ^
+      -D BUILD_SHARED_LIBS:BOOL=true ^
+      -D FT_WITH_BZIP2=False ^
+      -D FT_WITH_HARFBUZZ=False ^
+      -D CMAKE_DISABLE_FIND_PACKAGE_BZip2=True ^
+      -D CMAKE_DISABLE_FIND_PACKAGE_HarfBuzz=True ^
+      -D FT_WITH_ZLIB=True ^
+      -D FT_WITH_PNG=True ^
       "%SRC_DIR:/=\\%"
 if errorlevel 1 exit 1
 
