@@ -35,3 +35,5 @@ if errorlevel 1 exit 1
 :: Move everything 1-level down.
 move %LIBRARY_INC%\freetype2\freetype %LIBRARY_INC% || exit 1
 move %LIBRARY_INC%\freetype2\ft2build.h %LIBRARY_INC% || exit 1
+
+if  %vc% LEQ 14 xcopy %LIBRARY_BIN%\libfreetype.dll %LIBRARY_BIN%\freetype.dll
