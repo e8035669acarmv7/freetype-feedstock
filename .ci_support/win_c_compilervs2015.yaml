@@ -1,5 +1,3 @@
-CMAKE_GENERATOR:
-- NMake Makefiles
 c_compiler:
 - vs2015
 channel_sources:
@@ -7,7 +5,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 libpng:
-- 1.6.35
+- '1.6'
 pin_run_as_build:
   libpng:
     max_pin: x.x
