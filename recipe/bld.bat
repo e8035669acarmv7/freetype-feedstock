@@ -38,4 +38,4 @@ move %LIBRARY_INC%\freetype2\ft2build.h %LIBRARY_INC% || exit 1
 
 :: vs2008 created libfreetype.dll instead of freetype.dll
 set LIB="%LIBRARY_BIN%\libfreetype.dll"
-if exist %LIB% (xcopy %LIB% %LIBRARY_BIN%\freetype.dll) || exit 1
+if exist %LIB% (copy %LIB% %LIBRARY_BIN%\freetype.dll) || exit 1
