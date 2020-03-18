@@ -36,4 +36,6 @@ if errorlevel 1 exit 1
 move %LIBRARY_INC%\freetype2\freetype %LIBRARY_INC% || exit 1
 move %LIBRARY_INC%\freetype2\ft2build.h %LIBRARY_INC% || exit 1
 
-if  %vc% LEQ 14 xcopy %LIBRARY_BIN%\libfreetype.dll %LIBRARY_BIN%\freetype.dll
+:: vs2008 created libfreetype.dll instead of freetype.dll
+set LIB="%LIBRARY_BIN%\libfreetype.dll"
+if exist %LIB% (xcopy %LIB% %LIBRARY_BIN%\freetype.dll) || exit 1
