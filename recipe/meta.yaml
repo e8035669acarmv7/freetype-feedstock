@@ -39,7 +39,9 @@ test:
 about:
   home: https://www.freetype.org/
   license: GPL-2.0 and FreeType
-  license_url: http://freetype.sourceforge.net/FTL.TXT
+  license_file:
+    - docs/GPLv2.TXT
+    - docs/FTL.TXT
   summary: A Free, High-Quality, and Portable Font Engine
   description: |
     FreeType is designed to be small, efficient, highly customizable
