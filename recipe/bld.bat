@@ -5,7 +5,7 @@ mkdir build
 cd build
 
 :: Configure.
-cmake -G"%CMAKE_GENERATOR%" ^
+cmake -G"Ninja" ^
       -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX:/=\\%" ^
       -DCMAKE_BUILD_TYPE=Release ^
       -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%:/=\\" ^
@@ -21,7 +21,7 @@ cmake -G"%CMAKE_GENERATOR%" ^
 if errorlevel 1 exit 1
 
 :: Build.
-cmake --build . --config Release
+ninja install
 if errorlevel 1 exit 1
 
 :: Test.
