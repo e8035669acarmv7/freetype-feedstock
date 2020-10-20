@@ -1,4 +1,4 @@
-{% set version = "2.10.3" %}
+{% set version = "2.10.4" %}
 
 package:
   name: freetype
@@ -6,7 +6,7 @@ package:
 
 source:
   url: http://download.savannah.gnu.org/releases/freetype/freetype-{{ version }}.tar.gz
-  sha256: 9dfb4e11efd6e460a87b1991a64bc69344ee7dc219d9b29e7faabc1c168ce8b0
+  sha256: 5eab795ebb23ac77001cfb68b7d4d50b5d6c7469247b0b01b2c953269f658dac
   patches:
     - 0003-Install-the-pkg-config-file-on-Windows-too.patch
 
