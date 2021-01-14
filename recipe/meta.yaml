@@ -11,7 +11,7 @@ source:
     - 0003-Install-the-pkg-config-file-on-Windows-too.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # has removed symbols at minor versions, but only very rarely.  Go with major.
     #  https://abi-laboratory.pro/tracker/timeline/freetype/
@@ -25,9 +25,6 @@ requirements:
     - make  # [not win]
     - ninja  # [win]
   host:
-    - libpng
-    - zlib
-  run:
     - libpng
     - zlib
 
